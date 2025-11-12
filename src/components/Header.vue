@@ -105,9 +105,7 @@ button {
 
   #logo.mobile { display: inline; height: 25px; }
 
-  header#header {
-            padding: 10px 40px;
-  }
+  header#header { padding: 10px 40px; }
 
   .brand {
     justify-content: flex-start;
@@ -115,4 +113,28 @@ button {
             padding-bottom: 7px;
   }
 }
+
+
+
+
+@media only screen and (min-width:391px) and (max-width: 431px) {
+  header#header {  padding: 10px 20px;  }
+
+  img#logo { padding-left: 33px;  }
+
+
+}
+
+@media only screen and (min-width:414.4px) and (max-width: 430px) {
+
+    header#header[data-v-61dd7a3d] {
+        padding: 10px 35px;
+    }
+
+    img#logo[data-v-61dd7a3d] {
+        padding-left: 0;
+    }
+}
+
+
 </style>

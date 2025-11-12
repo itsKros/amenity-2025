@@ -290,12 +290,11 @@ div#moreAmenity.closed {
     border-radius: 15px;
 }
 
-@media only screen and (max-width: 768px){
-    .detail {z-index:10;left: 3%;}
-    .cec{top:12%}.shp {top: 16%;}.ffa {top: 21%;}.dpl {top:30%;}.sba {top:35%;}.evc{top:40%;}.solAr {top:44%;}.dcs {top:50%;}
-    .list ul {height:78vh}
+.list {
+    padding: 20px 14px 16px 16px;
+}
 
-    .list ul {
+.list ul {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -308,7 +307,66 @@ div#moreAmenity.closed {
     .list {
     max-height: 82vh;
     overflow-y: scroll;
+    }
+
+@media only screen and (min-width: 1920px){
+    .list[data-v-7d622f5c] {
+    max-height: 100vh;
+    overflow-y: unset;
+    }
 }
+
+@media only screen and (min-width: 1600px){
+    .list{
+        max-height: 84vh;
+        overflow-y: unset;
+    }
+    div#sidebar {
+       
+        top: 79px;
+    }
+}
+
+
+
+
+@media only screen and (min-width: 1400px){
+    .list{
+        max-height: 84vh;
+        overflow-y: unset;
+    }
+    div#sidebar {
+        
+        top: 79px;
+    }
+}
+
+@media only screen and (min-width: 1520.08px){
+    .list{
+        max-height: 84vh;
+        overflow-y: scroll;
+    }
+    div#sidebar {
+        
+        top: 79px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .detail {z-index:10;left: 3%;}
+    .cec{top:12%}.shp {top: 16%;}.ffa {top: 21%;}.dpl {top:30%;}.sba {top:35%;}.evc{top:40%;}.solAr {top:44%;}.dcs {top:50%;}
+    .list ul {height:78vh}
+    div#sidebar{
+        top: 114px;
+    }
+
+    
+}
+
+@media only screen and (min-width:430.4px) and (max-width: 431px) {
+    div#sidebar{
+        top: 108px;
+    }
 }
 
 </style>

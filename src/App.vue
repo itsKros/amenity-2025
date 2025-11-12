@@ -1,5 +1,7 @@
 <template>
   <div id="app" class="relative" v-if="this.activeView !=null">
+
+    <img src="./assets/imgs/footer-logo.png" id="footerLogo" alt="Footer Logo">
      
     <Header :activeViewId="this.activeView.id" id="header" @viewClicked="viewClickedHandler"></Header>
     <Sidebar id="sidebar"></Sidebar>
@@ -9,8 +11,7 @@
         <iframe id="framePano" width="100%"  allowfullscreen :src="activeView.link"></iframe>
       </div>
       <div v-show="!this.activeView.pano">
-        <div id="panorama" class="bg-img" :style="{'background': 'url(' + activeView.link + ') center center no-repeat'}"></div>
-        
+        <div id="panorama" class="bg-img" :style="{'background': 'url(' + activeView.link + ') center center no-repeat'}"></div>        
       </div>
     </div>
   </div>
@@ -103,10 +104,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.bg-img{
-  height: 100vh !important;background-size: cover !important;
-}
+.bg-img{ height: 100vh !important;background-size: cover !important;}
 .panoimage {display:none;}
+
+img#footerLogo {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
 
     
 </style>
