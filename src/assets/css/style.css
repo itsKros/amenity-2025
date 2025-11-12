@@ -1,0 +1,17 @@
+.box-shadow {box-shadow: 2px 2px 12px rgba(0,0,0,0.1);}
+.VueCarousel-navigation-prev,
+.VueCarousel-navigation-next{padding: 0 !important;color:#fff !important; opacity: 1 !important;}
+.VueCarousel-navigation-prev {left:3px !important;}
+.VueCarousel-navigation-next {right:3px !important;}
+.VueCarousel-navigation-button{-webkit-appearance: none !important;}
+.VueCarousel-navigation-button:focus {outline: none !important;}
+
+
+
+.VueCarousel-wrapper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 5px 15px 0;
+}
+
