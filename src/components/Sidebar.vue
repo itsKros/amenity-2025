@@ -290,29 +290,40 @@ div#moreAmenity.closed {
     border-radius: 15px;
 }
 
-.list {
-    padding: 20px 14px 16px 16px;
+.list { 
+    max-height: 82vh;
+    overflow-y: scroll;
+    padding: 20px 14px 16px 16px;  
+    border-right: 4px solid rgba(255, 255, 255, 0%);
+    border-bottom: 4px solid rgba(255, 255, 255, 0%);
+            background-color: rgba(255, 255, 255, 85%);
 }
 
 .list ul {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    }
+}
 
-    .list ul li {
-        font-family: 'Open Sans', sans-serif;
-    }
 
-    .list {
-    max-height: 82vh;
-    overflow-y: scroll;
-    }
+.list ul li {
+        font-family: 'Open Sans', sans-serif;        
+    color: #474646;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.list ul li i {
+    font-size: 17px;
+}
+
+
 
 @media only screen and (min-width: 1920px){
-    .list[data-v-7d622f5c] {
-    max-height: 100vh;
-    overflow-y: unset;
+    .list {
+        max-height: 100vh;
+        overflow-y: unset;
     }
 }
 
@@ -322,9 +333,32 @@ div#moreAmenity.closed {
         overflow-y: unset;
     }
     div#sidebar {
-       
+        
         top: 79px;
     }
+}
+
+
+@media only screen and (min-width:1700px) and (max-width:2500px) {
+    div#sidebar {
+    width: 15.666%;
+}
+    #moreAmenity {font-size: 18px;} 
+    .list ul { gap: 22px;}
+    .list ul li {font-size: 14px;}
+    
+}
+
+@media only screen and (min-width:1300px) and (max-width:1700px) {
+    div#sidebar {width: 15.666%;}
+  
+}
+
+@media only screen and (min-width:1200px) and (max-width:1300px) {
+    div#sidebar {
+    width: 18.666%;
+}
+  
 }
 
 

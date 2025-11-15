@@ -104,6 +104,24 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #79adf699;
+    border-radius: 15px;
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 15px;
+    width: 5px;
+}
+
+
+
 .bg-img{ height: 100vh !important;background-size: cover !important;}
 .panoimage {display:none;}
 

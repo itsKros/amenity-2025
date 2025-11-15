@@ -3,12 +3,12 @@
 
     <!-- Brand Logo -->
     <div class="brand uppercase flex text-primary items-center justify-center md:justify-start text-3xl md:text-xl tracking-widest">
-      <img src="../assets/imgs/amenity-logo.png" alt="Explore Amenities" id="logo" class="desktop">
+      <img src="../assets/imgs/amenity-logo.svg" alt="Explore Amenities" id="logo" class="desktop">
       <img src="../assets/imgs/amenity-logo-mobile.png" alt="Explore Amenities" id="logo" class="mobile">
     </div>
 
     <!-- Desktop Items -->
-    <div class="amenties desktop w-10/12 hidden md:flex justify-between item-center uppercase text-white overflow-x-scroll md:overflow-x-hidden">
+    <div class="amenties desktop w-10/12 hidden md:flex justify-end item-center uppercase text-white overflow-x-scroll md:overflow-x-hidden">
       <a href="#" v-for="(view, index) in $parent.views"
          :key="`view-${index}`"
          :class="[activeViewId==view.id ? 'selected' : '']"
@@ -21,9 +21,7 @@
       <a href="#">
         <img src="../assets/imgs/360iconnew.png" alt="360 degree" id="icon360">
       </a>
-    </div>
-
-  
+    </div>  
     <MobileViewsSlider
       v-if="isMobile"
       :views="$parent.views"
@@ -76,8 +74,8 @@ img#logo {
 }
 
 /* Desktop menu */
-.amenties { width: 90%; }
-.amenties a { font-size: 13px; font-family: 'Open Sans', sans-serif; }
+.amenties { width: 90%;     gap: 17px;}
+.amenties a { font-size: 16px; font-family: 'Open Sans', sans-serif; }
 
 /* Selected state */
 a.selected { color: var(--primary); }
@@ -97,6 +95,18 @@ a.selected .circle {
 button {
   -webkit-appearance: none !important;
   border-radius: 0;
+}
+
+@media only screen and (min-width:1700px) and (max-width:2500px) {
+  .amenties a { font-size: 14px;}
+}
+
+@media only screen and (min-width:1300px) and (max-width:1700px) {
+  .amenties a { font-size: 12px;}
+}
+
+@media only screen and (min-width:1200px) and (max-width:1300px) {
+  .amenties a { font-size: 9px;}
 }
 
 @media only screen and (max-width: 767px) {
