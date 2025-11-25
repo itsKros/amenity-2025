@@ -109,16 +109,18 @@ export default {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #79adf699;
+    background: #9f9f9f;
     border-radius: 15px;
     width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #ffffff;
+    background: transparent !important;
     border-radius: 15px;
     width: 5px;
 }
+
+
 
 
 

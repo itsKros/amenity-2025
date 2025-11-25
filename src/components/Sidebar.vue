@@ -282,7 +282,7 @@ div#moreAmenity {
     padding: 9px;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
-        background-color: rgb(120 172 245 / 80%);
+        background-color: rgb(120 172 245 / 95%);
     box-shadow: 0 3px 6px rgb(0 0 0 / 17%);
 }
 
@@ -290,19 +290,19 @@ div#moreAmenity.closed {
     border-radius: 15px;
 }
 
-.list { 
+.list{
     max-height: 82vh;
     overflow-y: scroll;
-    padding: 20px 14px 16px 16px;  
-    border-right: 4px solid rgba(255, 255, 255, 0%);
+    padding: 20px 14px 16px 16px;
+    border-top: 4px solid rgba(255, 255, 255, 0%);
     border-bottom: 4px solid rgba(255, 255, 255, 0%);
-            background-color: rgba(255, 255, 255, 85%);
+    background-color: rgba(255, 255, 255, 95%);
 }
 
 .list ul {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
 }
 
 
@@ -312,6 +312,10 @@ div#moreAmenity.closed {
     display: flex;
     align-items: center;
     gap: 3px;
+}
+
+.list ul li.text-primary {
+    color: rgb(120 172 245);
 }
 
 .list ul li i {
@@ -332,75 +336,61 @@ div#moreAmenity.closed {
         max-height: 84vh;
         overflow-y: unset;
     }
-    div#sidebar {
-        
+    div#sidebar {        
         top: 79px;
     }
 }
 
 
 @media only screen and (min-width:1700px) and (max-width:2500px) {
-    div#sidebar {
-    width: 15.666%;
-}
+    div#sidebar {    width: 13.2%;}
     #moreAmenity {font-size: 18px;} 
-    .list ul { gap: 22px;}
-    .list ul li {font-size: 14px;}
+    .list ul { gap: 20px;}
+    .list ul li {font-size: 13px;}
     
 }
 
 @media only screen and (min-width:1300px) and (max-width:1700px) {
-    div#sidebar {width: 15.666%;}
+    div#sidebar {width: 13.2%;}
   
 }
 
 @media only screen and (min-width:1200px) and (max-width:1300px) {
-    div#sidebar {
-    width: 18.666%;
-}
-  
+    div#sidebar {width: 18.666%;}  
 }
 
 
 
 
 @media only screen and (min-width: 1400px){
-    .list{
-        max-height: 84vh;
-        overflow-y: unset;
-    }
-    div#sidebar {
-        
-        top: 79px;
-    }
+    .list{max-height: 84vh;overflow-y: unset;}
+    div#sidebar {top: 79px;}
 }
 
 @media only screen and (min-width: 1520.08px){
-    .list{
-        max-height: 84vh;
-        overflow-y: scroll;
-    }
-    div#sidebar {
-        
-        top: 79px;
-    }
+    .list{max-height: 84vh;overflow-y: scroll;}
+    div#sidebar {top: 79px;}
 }
 
 @media only screen and (max-width: 768px){
     .detail {z-index:10;left: 3%;}
     .cec{top:12%}.shp {top: 16%;}.ffa {top: 21%;}.dpl {top:30%;}.sba {top:35%;}.evc{top:40%;}.solAr {top:44%;}.dcs {top:50%;}
-    .list ul {height:78vh}
-    div#sidebar{
-        top: 114px;
-    }
+    .list ul {height:78vh; overflow: hidden;}
+    div#sidebar{top: 93px;width: 50%;}
+    .list {max-height: 80vh;}    
+}
 
-    
+
+@media only screen and (min-width:391px) and (max-width: 431px) {
+ div#sidebar {  left: 13px;  top: 114px; }
 }
 
 @media only screen and (min-width:430.4px) and (max-width: 431px) {
-    div#sidebar{
-        top: 108px;
-    }
+    div#sidebar{top: 108px;width: 46.2%;left: 13px;}
+}
+
+@media only screen and (min-width:414.4px) and (max-width: 430px) {
+  div#sidebar {left: 13px;top: 102px;}
 }
 
 </style>

@@ -1,9 +1,13 @@
 <template>
+  <div>
+ <img src="../assets/imgs/amenity-logo-mobile.svg" alt="Explore Amenities" id="logo" class="mobile">
   <div class="mobile-slider-wrapper" role="region" aria-label="Amenities slider">
+    
 
+    
     <!-- left arrow -->
     <button class="arrow-btn left-arrow" @click="prev" aria-label="Previous"></button>
-
+    
     <!-- swiper -->
     <div class="swiper-container" ref="swiperEl">
       <div class="swiper-wrapper">
@@ -24,9 +28,15 @@
         </div>
       </div>
     </div>
+     <!-- swiper end -->
 
     <!-- right arrow -->
     <button class="arrow-btn right-arrow" @click="next" aria-label="Next"></button>
+   
+
+
+  </div>
+
   </div>
 </template>
 
@@ -92,6 +102,7 @@ export default {
 .swiper-container {
   flex: 1 1 auto;
   width: 100%;
+  padding: 0 8px;
 }
 
 /* ensure wrapper inside swiper aligns items */
@@ -147,8 +158,8 @@ export default {
 
 /* arrow buttons (pure CSS) */
 .arrow-btn {
-  width: 28px;
-  height: 28px;
+  /* width: 28px;
+  height: 28px; */
   background: transparent;
   border: none;
   padding: 0;
@@ -199,38 +210,38 @@ export default {
 
 }
 
-@media only screen and (min-width:391px) and (max-width: 431px) {
+
+@media only screen and (min-width:414.4px) and (max-width: 429px) {
+
+    .right-arrow::before, .left-arrow::before {
+        top: -8px;
+    }
+    img#logo.mobile {
+    position: relative;
+    top: -2px;
+}
+ 
+
+}
+
+@media only screen and (min-width:430px) and (max-width: 431px) {
 
 
   .arrow-btn { position: relative; }
+  .right-arrow::before, .left-arrow::before { position: absolute; top: -40px;}
+ 
 
-  .right-arrow::before, .left-arrow::before { position: absolute; top: 16px;}
+  img#logo.mobile { padding: 0 27px; }
 
-  div#sidebar {
-    left: 13px;
-    top: 114px;
-  }
-}
 
-@media only screen and (min-width:430.4px) and (max-width: 431px) {
-  .right-arrow::before, .left-arrow::before { position: absolute; top: -27px;}
 
-  div#sidebar {
-    left: 13px;
-    top: 114px;
-  }
+  .mobile-slider-wrapper {    padding: 0 8px;}
 
 }
 
-@media only screen and (min-width:414.4px) and (max-width: 430px) {
-  .right-arrow::before, .left-arrow::before { position: absolute; top: -9px;}
 
-  div#sidebar {
-    left: 13px;
-    top: 114px;
-  }
 
-}
+
 
 
 </style>

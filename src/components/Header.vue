@@ -4,11 +4,11 @@
     <!-- Brand Logo -->
     <div class="brand uppercase flex text-primary items-center justify-center md:justify-start text-3xl md:text-xl tracking-widest">
       <img src="../assets/imgs/amenity-logo.svg" alt="Explore Amenities" id="logo" class="desktop">
-      <img src="../assets/imgs/amenity-logo-mobile.png" alt="Explore Amenities" id="logo" class="mobile">
+      <!-- <img src="../assets/imgs/amenity-logo-mobile.svg" alt="Explore Amenities" id="logo" class="mobile"> -->
     </div>
 
     <!-- Desktop Items -->
-    <div class="amenties desktop w-10/12 hidden md:flex justify-end item-center uppercase text-white overflow-x-scroll md:overflow-x-hidden">
+    <div class="amenties desktop w-10/12 hidden md:flex justify-between item-center uppercase text-white overflow-x-scroll md:overflow-x-hidden">
       <a href="#" v-for="(view, index) in $parent.views"
          :key="`view-${index}`"
          :class="[activeViewId==view.id ? 'selected' : '']"
@@ -66,6 +66,7 @@ header#header {
   top: 13px;
   border-radius: 50px;
   background-color: rgb(48 50 61 / 81%);
+  gap:30px;
 }
 
 /* Logo */
@@ -115,12 +116,16 @@ button {
 
   #logo.mobile { display: inline; height: 25px; }
 
-  header#header { padding: 10px 40px; }
-
+  header#header{
+    padding: 10px 40px;
+    border-radius: 25px;
+    background-color: rgb(48 50 61);
+     gap: 0;
+  }
   .brand {
     justify-content: flex-start;
     padding: 0 0px;
-            padding-bottom: 7px;
+    padding-bottom: 7px;
   }
 }
 
@@ -128,18 +133,30 @@ button {
 
 
 @media only screen and (min-width:391px) and (max-width: 431px) {
-  header#header {  padding: 10px 20px;  }
+  
 
-  img#logo { padding-left: 33px;  }
+   header#header{
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: rgb(48 50 61);
+            gap: 0;
+  }
+
+  img#logo { padding-left: 15px;  }
+
+
 
 
 }
 
 @media only screen and (min-width:414.4px) and (max-width: 430px) {
 
-    header#header[data-v-61dd7a3d] {
-        padding: 10px 35px;
-    }
+      
+   header#header{
+    padding: 10px 35px;
+    border-radius: 25px;
+    background-color: rgb(48 50 61);
+  }
 
     img#logo[data-v-61dd7a3d] {
         padding-left: 0;
