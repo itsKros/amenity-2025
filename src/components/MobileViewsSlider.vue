@@ -1,42 +1,29 @@
-<template>
-  <div>
- <img src="../assets/imgs/amenity-logo-mobile.svg" alt="Explore Amenities" id="logo" class="mobile">
-  <div class="mobile-slider-wrapper" role="region" aria-label="Amenities slider">
-    
-
-    
-    <!-- left arrow -->
-    <button class="arrow-btn left-arrow" @click="prev" aria-label="Previous"></button>
-    
-    <!-- swiper -->
-    <div class="swiper-container" ref="swiperEl">
-      <div class="swiper-wrapper">
-        <div
-          class="swiper-slide"
-          v-for="(view, index) in views"
-          :key="'view-' + (view.id || index)"
-        >
-          <a
-            href="#"
-            class="slide-link"
-            :class="{ selected: activeViewId === view.id }"
-            @click.prevent="$emit('viewClicked', view)"
+<template> 
+    <div class="mobile-slider-wrapper" role="region" aria-label="Amenities slider">
+    <div class="logoArea"><img src="../assets/imgs/amenity-logo-mobile.svg" alt="Explore Amenities" id="logo" class="mobile"></div>        
+    <button class="leftArrowArea arrow-btn left-arrow" @click="prev" aria-label="Previous"></button>
+    <button class="rightArrowArea arrow-btn right-arrow" @click="next" aria-label="Next"></button>
+    <div class="SliderArea">
+      <div class="swiper-container" ref="swiperEl">
+        <div class="swiper-wrapper">
+          <div
+            class="swiper-slide"
+            v-for="(view, index) in views"
+            :key="'view-' + (view.id || index)"
           >
-            <span class="dot" :class="{ active: activeViewId === view.id }"></span>
-            <span class="label">{{ view.name }}</span>
-          </a>
+            <a
+              href="#"
+              class="slide-link"
+              :class="{ selected: activeViewId === view.id }"
+              @click.prevent="$emit('viewClicked', view)"
+            >
+              <span class="dot" :class="{ active: activeViewId === view.id }"></span>
+              <span class="label">{{ view.name }}</span>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-     <!-- swiper end -->
-
-    <!-- right arrow -->
-    <button class="arrow-btn right-arrow" @click="next" aria-label="Next"></button>
-   
-
-
-  </div>
-
+    </div>             
   </div>
 </template>
 
@@ -89,47 +76,36 @@ export default {
 </script>
 
 <style scoped>
-/* wrapper aligns arrows and slider */
+
 .mobile-slider-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  box-sizing: border-box;
+  display: grid; 
+  grid-auto-columns: 1fr; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "leftArrowArea logoArea logoArea logoArea logoArea logoArea logoArea rightArrowArea"
+    "leftArrowArea SliderArea SliderArea SliderArea SliderArea SliderArea SliderArea rightArrowArea"; 
 }
+.leftArrowArea { grid-area: leftArrowArea; }
+.rightArrowArea { grid-area: rightArrowArea; }
+.logoArea { grid-area: logoArea; }
+.SliderArea { grid-area: SliderArea; display: flex; align-items: center;margin-top: 5px;}
 
-/* swiper container must have width so slides are visible */
-.swiper-container {
-  flex: 1 1 auto;
-  width: 100%;
-  padding: 0 8px;
-}
 
-/* ensure wrapper inside swiper aligns items */
-.swiper-wrapper { align-items: center; }
-
-/* each slide content layout */
-.swiper-slide {
-  display: flex !important;
-  align-items: center;
-  justify-content: flex-start;
-  box-sizing: border-box;
-  padding: 6px 4px;
-}
-
-/* clickable area */
 .slide-link {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 2px;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 13px;
   text-transform: uppercase;
   white-space: nowrap;
   text-decoration: none;
+  justify-content: start;
 }
 
-/* small dot and active state */
+
 .dot {
   height: 10px;
   width: 10px;
@@ -143,23 +119,19 @@ export default {
   border-color: var(--primary, #4da0ff);
 }
 
-/* selected text styling */
+
 .selected .label {
   color: var(--primary, #4da0ff);
   font-weight: 600;
 }
 
-/* labels (ensure visible) */
+
 .label {
   display: inline-block;
   color: #fff;
   line-height: 1;
 }
-
-/* arrow buttons (pure CSS) */
-.arrow-btn {
-  /* width: 28px;
-  height: 28px; */
+.arrow-btn {  
   background: transparent;
   border: none;
   padding: 0;
@@ -169,78 +141,21 @@ export default {
   cursor: pointer;
 }
 
-    .left-arrow::before {
-    content: "";
-    display: inline-block;
-    border-top: 25px solid transparent;
-    border-bottom: 25px solid transparent;
-    border-right: 15px solid #ffffff;
-    }
-
-    .right-arrow::before {
-    content: "";
-    display: inline-block;
-    border-top: 25px solid transparent;
-    border-bottom: 25px solid transparent;
-    border-left: 15px solid #ffffff;
-    }
-
-/* small screens tweaks */
-@media (max-width: 420px) {
-  .slide-link { font-size: 13px; gap: 4px; }
-  .swiper-slide { padding:0; }
-
-
-
-  .arrow-btn.left-arrow {
-        width: 31px;
-        height: 32px;
-        position: absolute;
-        left: 3px;
-        top: 17px;
-    }
-
-.arrow-btn.right-arrow[data-v-8015f726] {
-        width: 31px;
-        height: 32px;
-        position: absolute;
-        right: 3px;
-        top: 17px;
-    }
-
+.left-arrow::before {
+  content: "";
+  display: inline-block;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-right: 15px solid #ffffff;
 }
 
-
-@media only screen and (min-width:414.4px) and (max-width: 429px) {
-
-    .right-arrow::before, .left-arrow::before {
-        top: -8px;
-    }
-    img#logo.mobile {
-    position: relative;
-    top: -2px;
+.right-arrow::before {
+  content: "";
+  display: inline-block;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-left: 15px solid #ffffff;
 }
- 
-
-}
-
-@media only screen and (min-width:430px) and (max-width: 431px) {
-
-
-  .arrow-btn { position: relative; }
-  .right-arrow::before, .left-arrow::before { position: absolute; top: -40px;}
- 
-
-  img#logo.mobile { padding: 0 27px; }
-
-
-
-  .mobile-slider-wrapper {    padding: 0 8px;}
-
-}
-
-
-
 
 
 

@@ -4,7 +4,7 @@
     <!-- Brand Logo -->
     <div class="brand uppercase flex text-primary items-center justify-center md:justify-start text-3xl md:text-xl tracking-widest">
       <img src="../assets/imgs/amenity-logo.svg" alt="Explore Amenities" id="logo" class="desktop">
-      <!-- <img src="../assets/imgs/amenity-logo-mobile.svg" alt="Explore Amenities" id="logo" class="mobile"> -->
+     
     </div>
 
     <!-- Desktop Items -->
@@ -22,14 +22,16 @@
         <img src="../assets/imgs/360iconnew.png" alt="360 degree" id="icon360">
       </a>
     </div>  
-    <MobileViewsSlider
+
+        <MobileViewsSlider
       v-if="isMobile"
       :views="$parent.views"
       :activeViewId="activeViewId"
       @viewClicked="viewClicked"
     />
-
   </header>
+
+  
 </template>
 
 <script>
@@ -117,7 +119,7 @@ button {
   #logo.mobile { display: inline; height: 25px; }
 
   header#header{
-    padding: 10px 40px;
+    padding: 10px 0px;
     border-radius: 25px;
     background-color: rgb(48 50 61);
      gap: 0;
@@ -125,7 +127,7 @@ button {
   .brand {
     justify-content: flex-start;
     padding: 0 0px;
-    padding-bottom: 7px;
+    padding-bottom: 0px;
   }
 }
 
@@ -136,7 +138,7 @@ button {
   
 
    header#header{
-    padding: 10px 20px;
+    padding: 10px 0px;
     border-radius: 25px;
     background-color: rgb(48 50 61);
             gap: 0;
@@ -153,7 +155,7 @@ button {
 
       
    header#header{
-    padding: 10px 35px;
+    padding: 10px 0px;
     border-radius: 25px;
     background-color: rgb(48 50 61);
   }

@@ -47,9 +47,9 @@ export default {
   data: function() {
     return {
         views: [
-          { id: 1, name:'Pool & Jacuzzi', pano: true, active: false, link:'https://tourmkr.com/F1XyKbbHfP/33288239p&43.60h&88.28t' },
+          { id: 1, name:'Pool & Jacuzzi', pano: true, active: true, link:'https://tourmkr.com/F1XyKbbHfP/33288239p&43.60h&88.28t' },
           { id: 2, name:'Outdoor Kitchen', pano: true, active: false, link:'https://tourmkr.com/F1XyKbbHfP/33288241p&130.08h&87.33t' },
-          { id: 3, name:'Resident Lounge', pano: true, active: true, link:'https://tourmkr.com/F1XyKbbHfP/33288235p&95.11h&89.78t' },
+          { id: 3, name:'Resident Lounge', pano: true, active: false, link:'https://tourmkr.com/F1XyKbbHfP/33288235p&95.11h&89.78t' },
           { id: 4, name:'Billiards Lounge', pano: true, active: false, link:'https://tourmkr.com/F1oL1ageti/33288245p&333.71h&85.56t' },
           { id: 5, name:'Co-Working Space', pano: true, active: false, link:'https://tourmkr.com/F1oL1ageti/33288246p&68.11h&78.90t' },
           { id: 6, name:'Fitness Center', pano: true, active: false, link:'https://tourmkr.com/F1fPRSvYcj/33288243p&14.29h&76.95t' },
